@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twitter</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="login_page">
+      <div class="login_container">
+        <span class="icons_row">
+          <span class="material-icons close_login_icon"> close </span>
+          <i class="fab fa-twitter close_login_icon"></i>
+        </span>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <h5>Sign in to Twitter</h5>
+          <button class="btn btn-outline-dark button1" type="button">Sign in with Google</button>
+          <div class="or_raw">
+            <hr />
+            <span> or </span>
+            <hr />
+          </div>
+          <input class="email_input" formControlName="email" type="text" placeholder="phone, email, or username"/>
+          <div style="height: 30px;"></div>
+          <input class="email_input" formControlName="password" type="text" placeholder="Password"/>
+          <button type="submit" class="btn btn-dark button1">Next</button>
+          <button class="btn btn-outline-dark button1" type="button">Forget Password?</button>
+        </form>
+        <p>Don't have an account? <button class="signUp_link" (click)="onClick()" >Sign up</button></p>
+      </div>
+    </div>
+  </body>
+</html>
