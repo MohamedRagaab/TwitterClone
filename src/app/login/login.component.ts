@@ -24,12 +24,15 @@ export class LoginComponent implements OnInit {
   url = 'https://localhost:44386/api/Users';
 
   ngOnInit(): void {
-   // this.httpService.getAllUsers();
+  
   }
   onSubmit(){
+    this.httpService.getLoginUser(this.loginForm.value.email);
     console.log(this.loginForm.value);
-    if(this.loginForm.value.password == '221999'){
+    if(this.loginForm.value.password == this.httpService.user.password){
       this.router.navigate(['/home']);
+    }else{
+      this.router.navigate(['/login']);
     }
   }
   onClick(){
